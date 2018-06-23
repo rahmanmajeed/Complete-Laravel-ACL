@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/manage-user','AppController@userList')->name('user.list');
+Route::get('/manage-role','AppController@roleList')->name('role.list');
+Route::get('/manage-permission','AppController@permissionList')->name('permission.list');
