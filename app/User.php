@@ -39,4 +39,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Permission::class,'user_permission');
     }
+
+    /**
+     * User Role's Check methods
+     */
+
+     
 }

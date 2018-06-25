@@ -30,7 +30,7 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->roles->implode('name', ', ')}}</td>
                 <td>{{$user->user_permissions->implode('name', ', ')}}</td>
-                <td><a href="#"><span class="btn btn-info">Edit</span></a>::<a href="#"><span class="btn btn-danger">Delete</span></a></td>
+                <td><a href="{{route('user.edit',$user->id)}}"><span class="btn btn-info">Edit</span></a>::<a href="#"><span class="btn btn-danger">Delete</span></a></td>
                 @endforeach
                 </tr>
                 </tbody>

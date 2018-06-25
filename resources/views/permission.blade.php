@@ -14,7 +14,24 @@
                         </div>
                     @endif
 
-                    You are Permissions in!
+                <table class="table table-bordered">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                 @foreach($permissions as $permission)
+                 <tr>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$permission->name}}</td>
+                  <td>{{$permission->description}}</td>
+                  <td><a href="{{route('permission.edit',$permission->id)}}"><span class="btn btn-info">Edit</span></a>::<a href="#"><span class="btn btn-danger">Delete</span></a></td>
+                 </tr>
+                 @endforeach
+                </tbody>
+                </table>
                 </div>
             </div>
         </div>
