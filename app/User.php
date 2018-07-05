@@ -44,5 +44,13 @@ class User extends Authenticatable
      * User Role's Check methods
      */
 
+     public function hasPermission(string $permission)
+     {
+        if($this->user_permissions()->where('name',$permission)->first())
+        {
+            return true;
+        }
+        return false;
+     }
      
 }

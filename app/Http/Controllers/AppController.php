@@ -13,6 +13,7 @@ class AppController extends Controller
     function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('HasPermission:Role-Update,Role-Delete')->only('userEdit');
     }
 
     public function userList()
