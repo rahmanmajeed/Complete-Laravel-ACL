@@ -14,6 +14,7 @@ class AppController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('HasPermission:Role-Update,Role-Delete')->only('userEdit');
+        $this->middleware('HasRole:Admin|Author')->except(['userEdit','roleEdit','permissionEdit','userUpdate']);
     }
 
     public function userList()

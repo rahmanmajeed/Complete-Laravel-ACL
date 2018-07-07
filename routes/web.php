@@ -22,6 +22,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/manage-user','AppController@userList')->name('user.list');
 Route::get('/manage-role','AppController@roleList')->name('role.list');
 Route::get('/manage-permission','AppController@permissionList')->name('permission.list');
+// Route::prefix('admin')->middleware(['HasRole:Admin|Author'])->group(function(){
+//     Route::get('/manage-user','AppController@userList')->name('user.list');
+//     Route::get('/manage-role','AppController@roleList')->name('role.list');
+//     Route::get('/manage-permission','AppController@permissionList')->name('permission.list');
+// });
+
+// Route::group(['prefix'=>'admin','middleware'=>'HasRole:Admin|Author'], function(){
+//     Route::get('/manage-user','AppController@userList')->name('user.list');
+//     Route::get('/manage-role','AppController@roleList')->name('role.list');
+//     Route::get('/manage-permission','AppController@permissionList')->name('permission.list');
+// });
+
+
 
 Route::get('/update-user/{id}','AppController@userEdit')->name('user.edit');
 Route::get('/update-role/{id}','AppController@roleEdit')->name('role.edit');
