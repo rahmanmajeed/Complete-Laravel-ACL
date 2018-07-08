@@ -17,10 +17,12 @@ class HasRole
     {
         // return is_array($roles)? $roles: explode('|', $roles);
        // $roles=is_array($role)? $role: explode('|', $role);
+       //$str_role=explode('|',current($role));
+       /**current() function take array first element as a string like as $role[0] */
        $str_role=explode('|',$role[0]);
-       $rolem=$str_role;
+       $roleString=$str_role;
     
-         $roles=is_array($role)? $role : is_array($rolem)? $rolem : null;
+         $roles=is_array($role)? $role : is_array($roleString)? $roleString : null;
          //dd($roles);
 
         if($request->user()===null)
