@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+       @permission('Role-Create') <a href="{{route('role.create')}}" class="btn btn-success">+ Create</a>@endpermission
             <div class="card">
                 <div class="card-header">Roles</div>
 

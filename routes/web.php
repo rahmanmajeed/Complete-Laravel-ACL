@@ -41,3 +41,10 @@ Route::get('/update-role/{id}','AppController@roleEdit')->name('role.edit');
 Route::get('/update-permission/{id}','AppController@permissionEdit')->name('permission.edit');
 
 Route::match(['PUT','PATCH'],'/update-user/{id}','AppController@userUpdate')->name('user.update');
+
+
+/**
+ * new Role routes.
+ */
+Route::get('/create/new-role','AppController@roleFrom')->name('role.create');
+Route::post('/store/new-role','AppController@storeRole')->name('role.store');

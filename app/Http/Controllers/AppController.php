@@ -54,8 +54,41 @@ class AppController extends Controller
     {
         return $id;        
     }
+/**
+ * 
+ * Create new Role 
+ */
+   public function roleFrom()
+   {
+       return view('create-pages.role');
+   }
+
+   public function storeRole(Request $request)
+   {
+       $this->validate($request,[
+           'name' => 'required',
+           'slug' => 'required|unique:roles',
+           'desp' => 'required'
+       ],[
+           'name.required'=>'Enter Role Name',
+           'slug.required'=>'Enter Role Slug',
+           'slug.unique' =>'Slug must be Unique',
+           'desp.required'=>'Enter Role Description',
+       ]);
+
+       $role= new Role;
+       $role->name=$request->name;
+       $role->slug=ucfirst($request->slug);
+       $role->description=$request->desp;
+       $role->save();
+       return redirect()->route('role.list')->with('status','Role Created Successfully !!!');
+   }
 
 
+/**
+ * 
+ * Update User based on Role Permissions.
+ */
     public function userUpdate(Request $request,$id)
     {
         /**Detach or Remove User previous Role */
