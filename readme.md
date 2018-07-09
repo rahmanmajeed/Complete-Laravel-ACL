@@ -1,3 +1,7 @@
+[![Issues](https://img.shields.io/github/issues/rahmanmajeed/Complete-Laravel-ACL.svg)](https://github.com/rahmanmajeed/Complete-Laravel-ACL/issues)
+[![Stars](https://img.shields.io/github/stars/rahmanmajeed/Complete-Laravel-ACL.svg)](https://github.com/rahmanmajeed/Complete-Laravel-ACL/stargazers)
+[![Fork](https://img.shields.io/github/forks/rahmanmajeed/Complete-Laravel-ACL.svg)](https://github.com/rahmanmajeed/Complete-Laravel-ACL/network)
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
