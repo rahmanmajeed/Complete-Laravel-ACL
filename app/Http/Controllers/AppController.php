@@ -60,7 +60,8 @@ class AppController extends Controller
  */
    public function roleFrom()
    {
-       return view('create-pages.role');
+       $permissions=Permission::all();
+       return view('create-pages.role',compact('permissions'));
    }
 
    public function storeRole(Request $request)
@@ -81,6 +82,12 @@ class AppController extends Controller
        $role->slug=ucfirst($request->slug);
        $role->description=$request->desp;
        $role->save();
+
+       foreach($request['permission'] as $permission)
+        {
+          $role->role_permissions()->attach(Permission::where('id',$permission)->first());
+        }
+
        return redirect()->route('role.list')->with('status','Role Created Successfully !!!');
    }
 

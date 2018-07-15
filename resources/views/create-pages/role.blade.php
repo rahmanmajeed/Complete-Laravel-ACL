@@ -57,6 +57,18 @@
                   </div>
 
                   <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                   <label for="permissions">Permissions</label><br>
+                   <select name="permission[]" id="" multiple="multiple">
+                    @foreach($permissions as $permission)
+                    <option value="{{$permission->id}}">{{$permission->name}}</option>
+                    @endforeach
+                   </select>
+                  </div>
+                  </div>
+
+                  <div class="row">
                    <div class="col-md-3"></div>
                    <div class="col-md-3">
                     <div class="form-group">

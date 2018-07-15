@@ -31,7 +31,13 @@
                   <td>{{$role->slug}}</td>
                   <td>{{$role->description}}</td>
                   <td>{{$role->role_permissions->implode('name', ', ')}}</td>
-                  <td><a href="{{route('role.edit',$role->id)}}"><span class="btn btn-info">Edit</span></a>::<a href="#"><span class="btn btn-danger">Delete</span></a></td>
+                  <td>
+                  @permission('Role-Update')
+                  <a href="{{route('role.edit',$role->id)}}"><span class="btn btn-info">Edit</span></a>::
+                  @endpermission
+                  @permission('Role-Delete')
+                  <a href="#"><span class="btn btn-danger">Delete</span></a></td>
+                  @endpermission
                  </tr>
                  @endforeach
                 </tbody>

@@ -27,7 +27,13 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$permission->name}}</td>
                   <td>{{$permission->description}}</td>
-                  <td><a href="{{route('permission.edit',$permission->id)}}"><span class="btn btn-info">Edit</span></a>::<a href="#"><span class="btn btn-danger">Delete</span></a></td>
+                  <td>
+                  @permission('Role-Update')
+                  <a href="{{route('permission.edit',$permission->id)}}"><span class="btn btn-info">Edit</span></a>::
+                  @endpermission
+                  @permission('Role-Delete')
+                  <a href="#"><span class="btn btn-danger">Delete</span></a></td>
+                  @endpermission
                  </tr>
                  @endforeach
                 </tbody>
