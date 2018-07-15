@@ -48,7 +48,7 @@ class AppController extends Controller
     {
         $role=Role::with('role_permissions')->findOrFail($id);
 
-        return $role;        
+        return view('update-pages.role_update',compact('role'));        
     }
     public function permissionEdit($id)
     {
